@@ -5,3 +5,10 @@
     right: auto;
     display: block !important;
 }
+.title {
+    opacity: 0.8;
+    font-size: 40px;
+}
+.title2 {
+    opacity: 0.6;
+}

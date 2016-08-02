@@ -4,19 +4,18 @@
 	<meta charset="UTF-8">
 	<title>آفتاب گردون</title>
 	<link rel="stylesheet" href="vendors/semantic/semantic.min.css">
+	<link rel="stylesheet" href="vazir/vazir.css">
 	<link rel="stylesheet" href="css/base.css">
 </head>
 <body>
 <div class="ui stackable top fixed menu">
-	<div class="ui container">
-		<a class="item">
-			<i class="home icon"></i> Home
-		</a>
+	<div class="ui container farsi">
+		<a class="item"><i class="home icon"></i> خانه</a>
 		<div class="ui simple dropdown item">
-			More
+			مستندات
 			<i class="dropdown icon"></i>
 			<div class="menu">
-				<a class="item"><i class="edit icon"></i> Edit Profile</a>
+				<a class="item"><i class="edit icon"></i> API</a>
 				<div class="item">
 					<i class="dropdown icon"></i>
 					<span class="text">Clothing</span>
@@ -56,26 +55,63 @@
 					<div class="item">Manage Apps</div>
 				</div>
 			</div>
-			<div class="ui simple button item" id="sad">
+			<div class="ui simple button item farsi" id="loginPopup">
 				<i class="user icon"></i>
-				asjf
+				حساب شما
 			</div>
-			<div class="ui flowing popup bottom right transition hidden">
-				<div class="ui three relaxed column divided center aligned grid">
-					<div class="column">
-						<h4 class="ui header">Basic Plan</h4>
-						<p><b>2</b> projects, $10 a month</p>
-						<div class="ui button">Choose</div>
+			<div class="ui relaxed flowing popup bottom right transition hidden" id="loginPop">
+				<div class="ui top attached tabular secondary pointing menu farsi" dir="rtl">
+					<a class="item active" data-tab="first">ورود</a>
+					<a class="item" data-tab="second">ایجاد حساب</a>
+				</div>
+				<div class="ui bottom attached tab active" style="margin-top: 10px;" data-tab="first">
+					<form class="ui form farsi" dir="rtl">
+						<div class="field">
+							<label>ایمیل یا شناسه</label>
+							<input type="text" class="farsi" name="userid" placeholder="ایمیل یا شناسه">
+						</div>
+						<div class="field">
+							<label>گذرواژه</label>
+							<input type="password" class="farsi" name="passwd" placeholder="گذرواژه">
+						</div>
+						<div class="field">
+							<div class="ui toggle checkbox">
+								<input type="checkbox" >
+								<label>من را فراموش نکن</label>
+							</div>
+						</div>
+						<button class="ui green button farsi" type="submit">وارد شو</button>
+					</form>
+					<div class="ui error message farsi" dir="rtl">
+						<div class="header farsi">اخطار</div>
+						جیک جیک
 					</div>
-					<div class="column">
-						<h4 class="ui header">Business Plan</h4>
-						<p><b>5</b> projects, $20 a month</p>
-						<div class="ui button">Choose</div>
-					</div>
-					<div class="column">
-						<h4 class="ui header">Premium Plan</h4>
-						<p><b>8</b> projects, $25 a month</p>
-						<div class="ui button">Choose</div>
+				</div>
+				<div class="ui bottom attached tab" style="margin-top: 10px;" data-tab="second">
+					<form class="ui form farsi" dir="rtl">
+						<div class="field">
+							<label> شناسه</label>
+							<input type="text" class="farsi" name="userid" placeholder="شناسه">
+						</div>
+						<div class="field">
+							<label>ایمیل</label>
+							<input type="text" class="farsi" name="email" placeholder="ایمیل">
+						</div>
+						<div class="field">
+							<label>گذرواژه</label>
+							<input type="password" class="farsi" name="passwd" placeholder="گذرواژه">
+						</div>
+						<div class="field">
+							<div class="ui checkbox">
+								<input type="checkbox">
+								<label><a href="">قوانین</a> را قبول دارم</label>
+							</div>
+						</div>
+						<button class="ui green button farsi" type="submit">ثبت</button>
+					</form>
+					<div class="ui warning message farsi" dir="rtl">
+						<div class="header farsi">اخطار</div>
+						بق بقو
 					</div>
 				</div>
 			</div>
@@ -106,12 +142,15 @@
 		<div class="ui two column centered grid">
 			<div class="column">
 				<div class="ui text">
-					<h1>Aftabgardun</h1>
+					<h1 class="farsi title">آفتاب گردون</h1>
+				</div>
+				<div class="ui text farsi title2">
+					موتور جست و جوی مقالات علمی فارسی
 				</div>
 				<div class="ui fluid large action left icon input" style="margin-top: 1em;">
-					<i class="search icon"></i>
-					<input placeholder="Search..." type="text">
-					<div class="ui teal button">Search</div>
+					<i class="search icon" id="qicon"></i>
+					<input placeholder="Search..." type="text" autofocus id="query">
+					<div class="ui teal button farsi">بیاب</div>
 				</div>
 			</div>
 		</div>
