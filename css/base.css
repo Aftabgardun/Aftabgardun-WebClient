@@ -12,3 +12,6 @@
 .title2 {
     opacity: 0.6;
 }
+.ui.items .item .content {
+    padding: 10px;
+}

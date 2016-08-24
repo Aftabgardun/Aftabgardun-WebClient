@@ -12,53 +12,49 @@
 <div class="ui container">
     <noscript>Please enable JavaScript!</noscript>
     <div class="ui grid" style="padding-top: 70px">
-        <div id="personText"></div>
-        <div class="five wide column" dir="rtl">
-            <div class="ui centered grid" dir="ltr">
-                <div class="column">
-                    <form class="ui form" id="miniSearchForm" onsubmit="return false;">
-                        <div class="field">
-                            <div class="ui fluid large action left icon input" style="margin-top: 1em;">
-                                <i class="search icon"></i>
-                                <input placeholder="Search..." type="text" autofocus name="query">
-                                <div class="ui submit teal button farsi" id="searchBtn">بیاب</div>
-                            </div>
-                        </div>
-                        <div class="fields farsi" dir="rtl">
-                            <label>جست و جو در ...</label>
-                            <div class="field">
-                                <div class="ui radio checkbox">
-                                    <input type="radio" name="cat" checked="checked" value="paper">
-                                    <label>مقالات</label>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="ui radio checkbox">
-                                    <label>افراد و محققان</label>
-                                    <input type="radio" name="cat" value="person">
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="ui radio checkbox">
-                                    <input type="radio" name="cat" value="org">
-                                    <label>مکان های علمی</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="miniSearchText"></div>
-                    </form>
-                </div>
-            </div>
+        <div class="five wide column" dir="ltr">
+			<form class="ui form" id="miniSearchForm" onsubmit="return false;">
+				<div class="field">
+					<div class="ui fluid large action left icon input" style="margin-top: 1em;">
+						<i class="search icon"></i>
+						<input placeholder="Search..." type="text" autofocus name="query">
+						<div class="ui submit teal button farsi" id="searchBtn">بیاب</div>
+					</div>
+				</div>
+				<div class="fields farsi" dir="rtl">
+					<label>جست و جو در ...</label>
+					<div class="field">
+						<div class="ui radio checkbox">
+							<input type="radio" name="cat" checked="checked" value="paper">
+							<label>مقالات</label>
+						</div>
+					</div>
+					<div class="field">
+						<div class="ui radio checkbox">
+							<label>افراد و محققان</label>
+							<input type="radio" name="cat" value="person">
+						</div>
+					</div>
+					<div class="field">
+						<div class="ui radio checkbox">
+							<input type="radio" name="cat" value="org">
+							<label>مکان های علمی</label>
+						</div>
+					</div>
+				</div>
+				<div id="miniSearchText"></div>
+			</form>
             <div class="ui divider"></div>
         </div>
         <div class="ui vertical divider"></div>
         <div class="eleven wide column" dir="rtl">
+			<div id="personText"></div>
             <div class="ui items">
                 <div class="item">
                     <div class="ui small image">
                         <img id="avatarLink" src="png/default.jpg">
                     </div>
-                    <div class="content" style="padding: 10px;">
+                    <div class="content">
                         <div class="header farsi" id="personName"></div>
                         <div class="meta farsi" id="occupation"></div>
                         <div class="description farsi">
@@ -69,6 +65,7 @@
                 </div>
             </div>
             <div class="ui divider"></div>
+			<div class="ui list" id="papers"></div>
         </div>
     </div>
 </div>
