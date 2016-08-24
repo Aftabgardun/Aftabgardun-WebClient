@@ -8,150 +8,52 @@
 	<link rel="stylesheet" href="css/base.css">
 </head>
 <body>
-<div class="ui stackable top fixed menu">
-	<div class="ui container farsi">
-		<a class="item"><i class="home icon"></i> خانه</a>
-		<div class="ui simple dropdown item">
-			مستندات
-			<i class="dropdown icon"></i>
-			<div class="menu">
-				<a class="item"><i class="edit icon"></i> API</a>
-				<div class="item">
-					<i class="dropdown icon"></i>
-					<span class="text">Clothing</span>
-					<div class="left menu">
-						<div class="header">Mens</div>
-						<div class="item">Shirts</div>
-						<div class="divider"></div>
-						<div class="header">Womens</div>
-						<div class="item">Dresses</div>
+<div w3-include-html="templates/header.html"></div>
+<div class="ui container">
+	<noscript>Please enable JavaScript!</noscript>
+	<div class="transition" id="searchUi" style="padding-top: 200px;">
+		<div class="ui centered grid">
+			<div class="eight wide computer sixteen wide mobile column">
+				<div id="titleText">
+					<div class="ui text">
+						<h1 class="farsi title">آفتاب گردون</h1>
+					</div>
+					<div class="ui text farsi title2">
+						موتور جست و جوی مقالات علمی فارسی
 					</div>
 				</div>
-				<a class="item"><i class="settings icon"></i> Account Settings</a>
-			</div>
-		</div>
-		<div class="right item">
-			<div class="ui simple dropdown button item">
-				<i class="wrench icon"></i>
-				asdas
-				<div class="menu">
-					<div class="header">Display Density</div>
-					<div class="item">Comfortable</div>
-					<div class="ui divider"></div>
-					<div class="item">
-						<i class="dropdown icon"></i>
-						<span class="text">Upload Settings</span>
-						<div class="menu">
-							<div class="item">
-								<i class="check icon"></i>
-								Convert Uploaded Files to PDF
+				<form class="ui form" id="searchForm" onsubmit="return false;">
+					<div class="field">
+						<div class="ui fluid large action left icon input" style="margin-top: 1em;">
+							<i class="search icon"></i>
+							<input placeholder="Search..." type="text" autofocus name="query">
+							<div class="ui submit teal button farsi" id="searchBtn">بیاب</div>
+						</div>
+					</div>
+					<div class="inline fields farsi" dir="rtl">
+						<label>جست و جو در ...</label>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="cat" checked="checked" value="paper">
+								<label>مقالات</label>
 							</div>
-							<div class="item">
-								<i class="check icon"></i>
-								Digitize Text from Uploaded Files
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<label>افراد و محققان</label>
+								<input type="radio" name="cat" value="person">
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui radio checkbox">
+								<input type="radio" name="cat" value="org">
+								<label>مکان های علمی</label>
 							</div>
 						</div>
 					</div>
-					<div class="item">Manage Apps</div>
-				</div>
-			</div>
-			<div class="ui simple button item farsi" id="loginPopup">
-				<i class="user icon"></i>
-				حساب شما
-			</div>
-			<div class="ui relaxed flowing popup bottom right transition hidden" id="loginPop">
-				<div class="ui top attached tabular secondary pointing menu farsi" dir="rtl">
-					<a class="item active" data-tab="first">ورود</a>
-					<a class="item" data-tab="second">ایجاد حساب</a>
-				</div>
-				<div class="ui bottom attached tab active" style="margin-top: 10px;" data-tab="first">
-					<form class="ui form farsi" dir="rtl">
-						<div class="field">
-							<label>ایمیل یا شناسه</label>
-							<input type="text" class="farsi" name="userid" placeholder="ایمیل یا شناسه">
-						</div>
-						<div class="field">
-							<label>گذرواژه</label>
-							<input type="password" class="farsi" name="passwd" placeholder="گذرواژه">
-						</div>
-						<div class="field">
-							<div class="ui toggle checkbox">
-								<input type="checkbox" >
-								<label>من را فراموش نکن</label>
-							</div>
-						</div>
-						<button class="ui green button farsi" type="submit">وارد شو</button>
-					</form>
-					<div class="ui error message farsi" dir="rtl">
-						<div class="header farsi">اخطار</div>
-						جیک جیک
-					</div>
-				</div>
-				<div class="ui bottom attached tab" style="margin-top: 10px;" data-tab="second">
-					<form class="ui form farsi" dir="rtl">
-						<div class="field">
-							<label> شناسه</label>
-							<input type="text" class="farsi" name="userid" placeholder="شناسه">
-						</div>
-						<div class="field">
-							<label>ایمیل</label>
-							<input type="text" class="farsi" name="email" placeholder="ایمیل">
-						</div>
-						<div class="field">
-							<label>گذرواژه</label>
-							<input type="password" class="farsi" name="passwd" placeholder="گذرواژه">
-						</div>
-						<div class="field">
-							<div class="ui checkbox">
-								<input type="checkbox">
-								<label><a href="">قوانین</a> را قبول دارم</label>
-							</div>
-						</div>
-						<button class="ui green button farsi" type="submit">ثبت</button>
-					</form>
-					<div class="ui warning message farsi" dir="rtl">
-						<div class="header farsi">اخطار</div>
-						بق بقو
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--<div class="ui item">-->
-			<!--<div class="text">-->
-				<!--<img class="ui avatar image" src="/jsj">-->
-				<!--جک گنجیشکه-->
-			<!--</div>-->
-			<!--<i class="dropdown icon"></i>-->
-			<!--<div class="menu">-->
-				<!--<div class="header">حساب کاربری</div>-->
-				<!--<div class="item">ورود</div>-->
-				<!--<div class="item">-->
-					<!--<img class="ui avatar image" src="/idsf">-->
-					<!--Jenny Hess-->
-				<!--</div>-->
-				<!--<div class="divider"></div>-->
-				<!--<div class="header">تنظیمات  حساب</div>-->
-				<!--<div class="item"><i class="android icon"></i>پروفایل </div>-->
-				<!--<div class="item"><i class="remove user icon"></i>خروج </div>-->
-			<!--</div>-->
-		<!--</div>-->
-	</div>
-</div>
-<div class="ui container" style="margin-top: 250px;">
-	<div class="content">
-		<div class="ui two column centered grid">
-			<div class="column">
-				<div class="ui text">
-					<h1 class="farsi title">آفتاب گردون</h1>
-				</div>
-				<div class="ui text farsi title2">
-					موتور جست و جوی مقالات علمی فارسی
-				</div>
-				<div class="ui fluid large action left icon input" style="margin-top: 1em;">
-					<i class="search icon" id="qicon"></i>
-					<input placeholder="Search..." type="text" autofocus id="query">
-					<div class="ui teal button farsi">بیاب</div>
-				</div>
+					<div id="searchText"></div>
+				</form>
+				<div class="ui relaxed divided list" id="searchResult"></div>
 			</div>
 		</div>
 	</div>
@@ -160,5 +62,9 @@
 </body>
 <script src="vendors/jquery.min.js"></script>
 <script src="vendors/semantic/semantic.min.js"></script>
+<script src="vendors/w3data.js"></script>
 <script src="js/views/base.js"></script>
+<script src="js/views/alerts.js"></script>
+<script src="js/api/uris.js"></script>
+<script src="js/controller/search.js"></script>
 </html>

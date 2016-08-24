@@ -1,0 +1,41 @@
+<div class="ui centered grid">
+    <div class="eight wide computer sixteen wide mobile column">
+        <div class="ui text">
+            <h1 class="farsi title">آفتاب گردون</h1>
+        </div>
+        <div class="ui text farsi title2">
+            موتور جست و جوی مقالات علمی فارسی
+        </div>
+        <form class="ui form" id="searchForm" onsubmit="return false;">
+            <div class="field">
+                <div class="ui fluid large action left icon input" style="margin-top: 1em;">
+                    <i class="search icon"></i>
+                    <input placeholder="Search..." type="text" autofocus name="query">
+                    <div class="ui submit teal button farsi" id="searchBtn">بیاب</div>
+                </div>
+            </div>
+            <div class="inline fields farsi" dir="rtl">
+                <label>جست و جو در ...</label>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="cat" checked="checked" value="paper">
+                        <label>مقالات</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <label>افراد و محققان</label>
+                        <input type="radio" name="cat" value="person">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="cat" value="org">
+                        <label>مکان های علمی</label>
+                    </div>
+                </div>
+            </div>
+            <div id="searchText"></div>
+        </form>
+    </div>
+</div>
