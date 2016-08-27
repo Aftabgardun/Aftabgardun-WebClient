@@ -9,7 +9,7 @@ var serverAddress = 'http://172.17.10.86:5000',
     paperInfoUri = '/getpaperinfo/',
     paperInfoMethod = 'POST',
     orgInfoUri = '/getorginfo/',
-    prgInfoMethod = 'POST'
+    orgInfoMethod = 'POST'
 
     ;
 
