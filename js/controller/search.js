@@ -43,7 +43,7 @@ function successSearch(data) {
         for (var i in data) {
             var coAuthors = '';
             for (var j in data[i].authors) {
-                coAuthors += '<a href="?id=' + data[i].authors[j].personid + '">' + data[i].authors[j].name + '</a>, '
+                coAuthors += '<a href="person.html?id=' + data[i].authors[j].personid + '">' + data[i].authors[j].name + '</a>, '
             }
             $('#searchResult').append(
                 $('<div class="item"></div>').append(
