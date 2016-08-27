@@ -29,6 +29,13 @@ function showPersonDetail(data) {
             );
         }
     }
+    if (data.organizations.length) {
+        for (var i in data.organizations) {
+            $('#org').append(
+                $('<a></a>').html(data.organizations[i].name + '<br>').attr('href', 'org.html?id=' + data.organizations[i].orgid)
+            );
+        }
+    }
     if (data.papers) {
         for (var i in data.papers) {
             var coAuthors = '';
