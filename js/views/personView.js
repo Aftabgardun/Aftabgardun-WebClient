@@ -6,7 +6,7 @@ var icons = {
     book: 'large book icon',
     trans: 'large flag icon',
     null: 'large file outline icon',
-    undifined: 'large file outline icon'
+    undefined: 'large file outline icon'
 };
 function failSearch(message) {
     makeMessage('error', '#personText', '', message);
