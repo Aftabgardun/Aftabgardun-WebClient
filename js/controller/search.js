@@ -9,9 +9,7 @@ var icons = {
     null: 'large file outline icon',
     undifined: 'large file outline icon'
 };
-function failSearch(message) {
-    makeMessage('error', '#searchText', '', message);
-}
+
 function successSearch(data) {
     if (data.results.length == 0) {
         makeMessage('warning', '#searchText', '', 'موردی یافت نشد');
@@ -55,6 +53,22 @@ function successSearch(data) {
                         $('<a class="header"></a>').html(data[i].title).attr('href', 'papers.html?id=' + data[i].paperid)
                     ).append(
                         $('<div class="description">').html(data[i].keywords + '<br>' + coAuthors)
+                    ).css('padding-right', '10px')
+                )
+            );
+        }
+    }
+    else if (cat == 'org') {
+        data = data.results;
+        for (var i in data) {
+            $('#searchResult').append(
+                $('<div class="item"></div>').append(
+                    $('<i class="large lab icon"></i>')
+                ).append(
+                    $('<div class="content"></div>').append(
+                        $('<a class="header"></a>').html(data[i].name).attr('href', 'org.html?id=' + data[i].orgid)
+                    ).append(
+                        $('<div class="description">').html(data[i].description)
                     ).css('padding-right', '10px')
                 )
             );

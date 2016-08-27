@@ -2,20 +2,6 @@
  * Created by hooman on 8/27/16.
  */
 
-function failSearch(message) {
-    makeMessage('error', '#personText', '', message);
-}
-
-function makeRow(first, second) {
-    $('#content').append(
-        $('<div class="row"></div>').append(
-            $('<div class="four wide column farsi"></div>').html(first)
-        ).append(
-            $('<div class="twelve wide column farsi"></div>').html(second)
-        )
-    );
-}
-
 var icons = {
     paper: 'مقاله',
     book: 'کتاب',

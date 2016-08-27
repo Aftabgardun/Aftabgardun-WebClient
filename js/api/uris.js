@@ -7,7 +7,9 @@ var serverAddress = 'http://172.17.10.86:5000',
     personInfoUri = '/getpersoninfo/',
     personInfoMethod = 'POST',
     paperInfoUri = '/getpaperinfo/',
-    paperInfoMethod = 'POST'
+    paperInfoMethod = 'POST',
+    orgInfoUri = '/getorginfo/',
+    prgInfoMethod = 'POST'
 
     ;
 
@@ -48,6 +50,21 @@ function paperInfoRequest(pid, onResponse, onFail) {
         url: serverAddress + paperInfoUri,
         method: paperInfoMethod,
         data: {paperID: pid},
+        dataType:'json',
+        success: function (data, textStatus, jqXHR) {
+            onResponse(data);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            onFail(jqXHR);
+        }
+    });
+}
+
+function orgInfoRequest(gid, onResponse, onFail) {
+    $.ajax({
+        url: serverAddress + orgInfoUri,
+        method: orgInfoMethod,
+        data: {orgID: gid},
         dataType:'json',
         success: function (data, textStatus, jqXHR) {
             onResponse(data);

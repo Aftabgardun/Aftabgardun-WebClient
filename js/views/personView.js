@@ -8,9 +8,6 @@ var icons = {
     null: 'large file outline icon',
     undefined: 'large file outline icon'
 };
-function failSearch(message) {
-    makeMessage('error', '#personText', '', message);
-}
 
 function showPersonDetail(data) {
     if (data.photo)
