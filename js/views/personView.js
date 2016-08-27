@@ -8,6 +8,7 @@ var icons = {
     null: 'large file outline icon',
     undefined: 'large file outline icon'
 };
+var co = {};
 
 function showPersonDetail(data) {
     if (data.photo)
@@ -40,6 +41,10 @@ function showPersonDetail(data) {
         for (var i in data.papers) {
             var coAuthors = '';
             for (var j in data.papers[i].authors) {
+                if (co[data.papers[i].authors[j].personid] === undefined && data.papers[i].authors[j].personid != personid)
+                    co[data.papers[i].authors[j].personid] = [1, data.papers[i].authors[j].name];
+                else if (data.papers[i].authors[j].personid != personid)
+                    ++co[data.papers[i].authors[j].personid][0];
                 coAuthors += '<a href="?id=' + data.papers[i].authors[j].personid + '">' + data.papers[i].authors[j].name + '</a>, '
             }
             $('#papers').append(
@@ -54,10 +59,19 @@ function showPersonDetail(data) {
                 )
             );
         }
+        var li = [];
+        for (var i in co)
+            li.push([i, co[i][0], co[i][1]]);
+        li.sort(function (a, b) {return b[1] - a[1]});
+        for (var i in li)
+            if (i < 10)
+                $('#coAuthor').append($('<a class="item">').html(li[i][2]).attr('href', 'person.html?id=' + li[i][0]));
+
+        $('#coAuthor').append($('<a class="item farsi">').attr('href', '').html('بیشتر.....'));
     }
 }
-
+var personid;
 $(document).ready(function () {
-    var personid = window.location.search.replace('?id=', '');
+    personid = window.location.search.replace('?id=', '');
     personInfoRequest(personid, showPersonDetail, failSearch);
 });
