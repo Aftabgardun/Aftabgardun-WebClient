@@ -9,7 +9,9 @@ var serverAddress = 'http://172.17.10.86:5000',
     paperInfoUri = '/getpaperinfo/',
     paperInfoMethod = 'POST',
     orgInfoUri = '/getorginfo/',
-    orgInfoMethod = 'POST'
+    orgInfoMethod = 'POST',
+    moreInfoUri = '/getpersoncoauthors/',
+    moreInfoMethod = 'POST'
 
     ;
 
@@ -65,6 +67,21 @@ function orgInfoRequest(gid, onResponse, onFail) {
         url: serverAddress + orgInfoUri,
         method: orgInfoMethod,
         data: {orgID: gid},
+        dataType:'json',
+        success: function (data, textStatus, jqXHR) {
+            onResponse(data);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            onFail(jqXHR);
+        }
+    });
+}
+
+function moreInfoRequest(pid, onResponse, onFail) {
+    $.ajax({
+        url: serverAddress + moreInfoUri,
+        method: moreInfoMethod,
+        data: {personID: pid},
         dataType:'json',
         success: function (data, textStatus, jqXHR) {
             onResponse(data);

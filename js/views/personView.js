@@ -67,7 +67,7 @@ function showPersonDetail(data) {
             if (i < 10)
                 $('#coAuthor').append($('<a class="item">').html(li[i][2]).attr('href', 'person.html?id=' + li[i][0]));
 
-        $('#coAuthor').append($('<a class="item farsi">').attr('href', '').html('بیشتر.....'));
+        $('#coAuthor').append($('<a class="item farsi">').attr('href', 'graph.html?id=' + personid).html('بیشتر.....'));
     }
 }
 var personid;
