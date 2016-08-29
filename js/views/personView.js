@@ -74,4 +74,13 @@ var personid;
 $(document).ready(function () {
     personid = window.location.search.replace('?id=', '');
     personInfoRequest(personid, showPersonDetail, failSearch);
+    $('form#miniSearchForm').form({
+        fields: {
+            query: 'empty',
+            cat: 'empty'
+        },
+        onSuccess: function (event, fields) {
+            window.location.assign('index.html?query=' + fields.query + '&cat=' + fields.cat);
+        }
+    });
 });
