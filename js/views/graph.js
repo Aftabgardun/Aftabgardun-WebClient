@@ -134,7 +134,7 @@ function showPersonDetail(data) {
     if (data.occupation)
         $('#occupation').html(data.occupation);
     if (data.name)
-        $('#personName').html(data.name);
+        $('#personName').append($('<a>').attr('href', 'person.html?id=' + start).html(data.name));
     if (data.webpages.length) {
         for (var i in data.webpages) {
             $('#homePage').append(
