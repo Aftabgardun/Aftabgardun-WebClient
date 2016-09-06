@@ -1,7 +1,7 @@
 /**
  * Created by hooman on 8/24/16.
  */
-var serverAddress = 'http://172.17.10.86:5000',
+var serverAddress = 'http://172.17.9.114:5000',
     searchUri = '/search/',
     searchMethod = 'POST',
     personInfoUri = '/getpersoninfo/',

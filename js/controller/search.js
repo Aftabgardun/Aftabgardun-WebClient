@@ -77,12 +77,10 @@ function successSearch(data) {
 }
 
 $(document).ready(function () {
-    if (window.location.search.lastIndexOf('?') != -1) {
-        var q = window.location.search.substr(1).split('&');
-        q[0] = q[0].replace('query=', '').replace('cat=', '');
-        q[1] = q[1].replace('query=', '').replace('cat=', '');
-        searchRequest(q[0], q[1], successSearch, failSearch);
-    }
+    var a = QueryString();
+    if (a["query"] != undefined && a["cat"] != undefined)
+        searchRequest(a['query'], a['cat'], successSearch, failSearch);
+
     $('form#searchForm').form({
         fields: {
             cat: 'empty',
